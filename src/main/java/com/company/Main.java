@@ -1,27 +1,35 @@
 package com.company;
 
 import java.*;
+import java.util.ArrayList;
 import java.util.Vector;
 import com.company.Node;
 
 public class Main {
 
     public static void main(String[] args) {
-        Node<Integer> integerNode=new Node<Integer>();
-        integerNode.add(10);
-        integerNode.add(21);
-        integerNode.add(1);
-        integerNode.add(2);
-        integerNode.add(0);
-        integerNode.add(9);
-        integerNode.add(-33);
-        for(int i=0; i<7; i++){
-            System.out.print(integerNode.getAt(i)+" ");
+        ListArray<Integer> integerList = new ListArray<Integer>();
+        integerList.add(10);
+        integerList.add(21);
+        integerList.add(1);
+        integerList.add(2);
+        integerList.add(0);
+        integerList.add(9);
+        integerList.add(-33);
+        for(int i = 0; i < integerList.size(); i++){
+            System.out.print(integerList.getAt(i)+" ");
         }
-        integerNode.sort(true);
+        integerList.sort(false);
+
+//        integerList.removeLast();
+//        integerList.removeLast();
+//        integerList.removeLast();
+//        integerList.removeLast();
+//        integerList.removeLast();
+
         System.out.println();
-        for(int i=0; i<7; i++){
-            System.out.print(integerNode.getAt(i)+" ");
+        for(int i = 0; i < integerList.size(); i++){
+            System.out.print(integerList.getAt(i)+" ");
         }
     }
 }
