@@ -19,12 +19,18 @@ public class ListArray<T extends Comparable<T>> {
         tail = head;
     }
 
+    public void fill(T[] values) {
+        for (T val : values) {
+            this.add(val);
+        }
+    }
+
     public void add(T value) {
         try {
             tail.add(value);
             size++;
         } catch (ArrayStoreException e) {
-            Node<T> newNode = new Node<T>();
+            Node<T> newNode = new Node<T>(nodeSize);
             connectNodes(tail, newNode);
             tail = newNode;
             this.add(value);
@@ -107,7 +113,7 @@ public class ListArray<T extends Comparable<T>> {
 
     void connectNodes(Node<T> left, Node<T> right) {
         left.setNext(right);
-        right.setNext(left);
+        right.setPrev(left);
     }
 
     ArrayList<T> toArray() {
